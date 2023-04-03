@@ -50,3 +50,5 @@ window.addEventListener('scroll', () => {
         console.log(video.style)
     }
 });
+
+console.log("done")
