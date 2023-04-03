@@ -1,0 +1,257 @@
+//imports
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500;700;900&family=Roboto+Condensed:ital,wght@1,300;1,400;1,700&display=swap');
+
+
+//variable
+$background-color : #e7e7e7;
+$main-link-color : #146C94;
+$border-color: #F8CBA6;
+$margin-left: 150px;
+$font-color: rgb(233, 43, 122);
+
+//Global style
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.container-fluid{
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: "cairo", sans-serif;
+    
+}
+
+.header-title{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    text-align: center;
+    h1{
+        text-align: center;
+        letter-spacing: 2px;
+        border: 2px solid $main-link-color;
+        border-radius: 20px;
+        display: inline-block;
+        padding: 15px;
+    }
+}   
+
+//Home
+.home{
+    height: 100vh;
+    position: relative;
+    background-color: $background-color;
+    background-image: url("./photos/black-background-design.jpg");
+    .container-fluid{
+        .content{
+            // position: absolute;
+            // top:30%;
+            margin: auto;
+            margin: auto;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            .links{
+                position: fixed;
+                left: 3%;
+                // margin-right: 30px;
+                li{
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    a{
+                        position: relative;
+                        overflow: hidden;
+                        &::before{
+                                content: "";
+                                position: absolute;
+                                width: 15px;
+                                height: 15px;
+                                background-color: $main-link-color ;
+                                // border: 1px solid transparent;
+                                border-radius: 50%;
+                                left: 0px;
+                                transform: translatey(40%);
+                                cursor: pointer;
+                                overflow: hidden;
+                                top: 0px;
+                            }
+                        &:hover::before{
+                                width: 20px;
+                                height: 20px;
+                                left: -10px;
+                                outline: 3px solid $border-color !important;
+                            }
+                        
+                        &:hover .text-link{    
+                                opacity: 1;
+                                visibility: visible;
+                                text-decoration: none;
+                                left: 5%;
+                                opacity: 1;
+                                visibility: visible;
+
+                            }
+                        .text-link{
+                            opacity: 0;
+                            visibility: hidden;
+                            margin-left: 15px;
+                            text-decoration: none;
+                            position: relative;
+                            left: -50%;
+                            transition: 0.3s;
+                            color: $font-color;
+                            font-size: 30px;
+                        }
+                        .text-link:hover{
+                            text-decoration: none;
+                            
+                        }
+
+                        .text-link.active{
+                            opacity: 1 !important;
+                            visibility: visible !important;
+                            left: 5% !important;
+                            color: $font-color;
+                        }
+                    
+                    }
+                    
+                }
+            }
+            .text{
+                margin-left: $margin-left;
+                color: white;
+                h1{
+                    font-weight: 700;
+                    overflow: hidden; /* Ensures the content is not revealed until the animation */
+                    border-right: .15em solid orange; /* The typwriter cursor */
+                    white-space: nowrap; /* Keeps the content on a single line */
+                    // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+                    letter-spacing: .15em; /* Adjust as needed */
+                    animation: 
+                        typing 2s steps(40, end),
+                        blink-caret 0.75s step-end forwards;
+
+                        @keyframes typing {
+                            
+                            from { width: 0}
+                            to { width: 100% }
+                        }
+                        @keyframes blink-caret {
+                            from, to { border-color: transparent }
+                            100% { border-color: orange; }
+                        }
+                }
+                
+                p.title{
+                    font-size: 20px;
+                    // visibility: hidden; opacity: 0;
+                    overflow: hidden; /* Ensures the content is not revealed until the animation */
+                    border-right: .15em solid orange; /* The typwriter cursor */
+                    white-space: nowrap; /* Keeps the content on a single line */
+                    // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+                    letter-spacing: .15em; /* Adjust as needed */
+                    animation-delay: 1.6s !important;
+                    animation: 
+                        typing_p 2s steps(40, end),
+                        blink-caret .75s step-end forwards;
+                        
+                        @keyframes typing_p {
+                            // 0%{ visibility: hidden; opacity: 0;}
+                            // 10%{ visibility: hidden; opacity: 0;}
+                            from { width: 0; visibility: visible; opacity: 1;}
+                            100% { width: 100%;visibility: visible; opacity: 1; }
+                        }
+                        @keyframes blink-caret {
+                            from, to { border-color: transparent }
+                            50% { border-color: orange; }
+                        }
+                }
+                
+            }
+            .img{
+                overflow: hidden;
+                // height: 300px;
+                // width: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    // flex-shrink: 0;
+                    min-width: 100%;
+                    min-height: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.Skills{
+    margin-bottom: 50px;
+    padding-top: 10px;
+    .img{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(4, minmax(220px, 250px));
+        margin-left: $margin-left;
+        align-items: center;
+        justify-content: center;
+        .img-1{
+            border: 1px solid $border-color;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 1px 0px 10px 1px #88888875;
+            max-width: 300px;
+            img{
+                width: 100%;
+            }
+            .text{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            &:hover{
+                transform: scale(1.04);
+            }
+        }
+    }
+}
+
+.gallary{
+    // margin-bottom: 50px;
+    background-color: #e7e7e7;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    .videos{
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(451px, 642px));
+        margin-left: $margin-left;
+        align-items: center;
+        justify-content: center;
+        video#video{
+            // width: 100%;
+            transform: translateX(1000px);
+            transition: 0.3s;
+        }
+    }
+}
