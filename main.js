@@ -3,10 +3,13 @@ let skill = document.getElementById("skills")
 let gallary = document.getElementById("gallary")
 let about = document.getElementById("about")
 let contact = document.getElementById("contact")
-let video = document.getElementById("video")
+let video_1 = document.getElementById("video_1")
+let video_2 = document.getElementById("video_2")
+let video_3 = document.getElementById("video_3")
+let video_4 = document.getElementById("video_4")
 
 
-console.log(skill, gallary, about, contact)
+// console.log(video.style)
 
 function getCurrentURL(event) {
     // console.log(event.target.innerText)
@@ -46,8 +49,18 @@ window.addEventListener('scroll', () => {
         about.setAttribute("class", "text-link")
         home.setAttribute("class", "text-link")
         contact.setAttribute("class", "text-link")
-        // video.style.transform ="translateX(0px)"
-        console.log(video.style)
+        video_1.style.transform = "translateX(0px)"
+        if (document.documentElement.scrollTop >= 1428) {
+            video_2.style.transform = "translateX(0px)"
+        }
+        if (document.documentElement.scrollTop >= 1955) {
+            video_3.style.transform = "translateX(0px)"
+        }
+        if (document.documentElement.scrollTop >= 2333) {
+            video_4.style.transform = "translateX(0px)"
+        }
+
+        // console.log(video.style)
     }
 });
 

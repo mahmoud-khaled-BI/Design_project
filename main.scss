@@ -212,7 +212,7 @@ body {
     .img{
         display: grid;
         gap: 10px;
-        grid-template-columns: repeat(4, minmax(220px, 250px));
+        grid-template-columns: repeat(auto-fill, minmax(180px, 200px));
         margin-left: $margin-left;
         align-items: center;
         justify-content: center;
@@ -244,14 +244,43 @@ body {
     .videos{
         display: grid;
         gap: 30px;
-        grid-template-columns: repeat(auto-fill, minmax(451px, 642px));
+        grid-template-columns: repeat(auto-fill, minmax(451px, 842px));
         margin-left: $margin-left;
         align-items: center;
         justify-content: center;
-        video#video{
-            // width: 100%;
-            transform: translateX(1000px);
-            transition: 0.3s;
+    }
+}
+
+.about{
+
+}
+
+.contact{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    width: 100%;
+    height: 200px;
+    background-color:#F8CBA6;
+    text-align: center;
+    padding: 20px;
+    .footer{
+        padding-top:20px ;
+        .icon{
+            padding: 5px;
+            i{
+                padding: 5px;
+            }
+        }
+    }
+    .end{
+        font-size: 10px;
+        .copy{
+            span{
+                color: $font-color;
+                padding-left: 5px;
+            }
         }
     }
 }
